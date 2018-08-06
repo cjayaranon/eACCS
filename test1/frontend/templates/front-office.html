@@ -1,0 +1,131 @@
+{% extends "main.html" %}
+{% load staticfiles %}
+
+{% block css %}
+
+<!--Bootstrap core CSS-->
+<link href="{% static 'css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+
+<!--BOOTSTRAP CDN-->
+<!--    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
+
+<!--Custome styles for this template-->
+<link href="{% static 'css/bootstrap/dashboard.css' %}" rel="stylesheet">
+<link href="{% static 'node_modules/fortawesome/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'css/ampc-style.css' %}" rel="stylesheet" type="text/css">
+
+<!--FONTAWESOME CDN-->
+<!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">-->
+{% endblock %}
+
+{% block content %}
+<title>AMPC|Front Office</title>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+<!--BREADCRUMBS-->
+            <div class="breads">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Front Office
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+<!--END BREADCRUMBS-->
+            <div class="btn-toolbar mb-2 mb-md-0">
+                <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                    <i class="fas fa-clipboard-list fa-sm"></i>
+                    Recently Used
+                </button>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2 class="h3">Client Services</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="{% url 'new-client' %}" class="btn btn-outline-secondary btn-block shadow">
+                            <i class="fas fa-user-plus fa-lg fa-fw"></i>
+                            New Client
+                        </a>
+                    </div>
+                    <span style="display:block; height: 50px;"></span>
+                    <div class="col-md-4">
+                        <a href="#" class="btn btn-outline-secondary btn-block shadow">
+                            <i class="fab fa-rebel fa-lg fa-fw"></i>
+                            {% lorem 1 w random %}
+                        </a>
+                    </div>
+                    <span style="display:block; height: 50px;"></span>
+                    <div class="col-md-4">
+                        <a href="#" class="btn btn-outline-secondary btn-block shadow">
+                            <i class="fab fa-galactic-republic fa-lg fa-fw"></i>
+                            {% lorem 1 w random %}
+                        </a>
+                    </div>
+                </div>
+                
+                <hr>
+                
+                <h2 class="h3">Inquiry</h2>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="#" class="btn btn-outline-secondary btn-block shadow">
+                            <i class="fab fa-galactic-senate fa-lg fa-fw"></i>
+                            {% lorem 1 w random %}
+                        </a>
+                    </div>
+                    <span style="display:block; height: 50px;"></span>
+                    <div class="col-md-3">
+                        <a href="#" class="btn btn-outline-secondary btn-block shadow">
+                            <i class="fab fa-first-order fa-lg fa-fw"></i>
+                            {% lorem 1 w random %}
+                        </a>
+                    </div>
+                    <span style="display:block; height: 50px;"></span>
+                    <div class="col-md-3">
+                        <a href="#" class="btn btn-outline-secondary btn-block shadow">
+                            <i class="fab fa-empire fa-lg fa-fw"></i>
+                            {% lorem 1 w random %}
+                        </a>
+                    </div>
+                    <span style="display:block; height: 50px;"></span>
+                    <div class="col-md-3">
+                        <a href="#" class="btn btn-outline-secondary btn-block shadow">
+                            <i class="fab fa-jedi-order fa-lg fa-fw"></i>
+                            {% lorem 1 w random %}
+                        </a>
+                    </div>
+                    <span style="display:block; height: 50px;"></span>
+                </div>
+                
+                <hr>
+                
+                <h2 class="h3">Reports</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="#" class="btn btn-outline-secondary btn-block shadow">
+                            <i class="fab fa-first-order-alt fa-lg fa-fw"></i>
+                            {% lorem 1 w random %}
+                        </a>
+                    </div>
+                    <span style="display:block; height: 50px;"></span>
+                    <div class="col-md-6">
+                        <a href="#" class="btn btn-outline-secondary btn-block shadow">
+                            <i class="fab fa-empire fa-lg fa-fw"></i>
+                            {% lorem 1 w random %}
+                        </a>
+                    </div>
+                    <span style="display:block; height: 50px;"></span>
+                </div>
+            </div>
+            <div class="col-md-4" id="timeS">
+                &nbsp;
+                <p><i class="fas fa-clock fa-lg fa-fw"></i>{% now "h:i:s" %}<span class="badge badge-light">{% now "A" %}</span></p>
+                <p><i class="fas fa-calendar-check fa-lg fa-fw"></i>{% now "F j Y" %}</p>
+            </div>
+        </div>
+    </main>
+<!--<script href="{% static 'node_modules/fortawesome/fontawesome-free/js/brands.js' %}"></script>-->
+{% endblock %}

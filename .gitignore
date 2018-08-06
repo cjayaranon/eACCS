@@ -1,0 +1,17 @@
+
+*.pyc
+*.pyo
+*.swp
+.DS_Store
+.coverage
+
+.project
+.pydevproject
+
+*.db
+*.sqlite3
+local_settings.py
+settings_local.py
+var/log/
+Users/migrations
+clients/migrations
