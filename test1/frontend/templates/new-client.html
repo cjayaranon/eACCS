@@ -1,6 +1,5 @@
 {% extends "main.html" %}
 {% load staticfiles %}
-{% load djmoney %}
 {% block css %}
 <!-- Bootstrap core CSS -->
     <link href="{% static 'css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
@@ -277,7 +276,7 @@
 <!--MAILING ADDRESS 1-->
                 <div class="row mod-row">
                     <div class="col-md-12 mb-3">
-                        <label for="room_number">Mailing Address</label>
+                        <label>Mailing Address</label>
                     </div>
                 </div>
                 <div class="row">
@@ -524,5 +523,25 @@
         }
     </script>
     
-    <script src="{% static 'js/ampc-style.js' %}"></script>
+<!--    <script src="{% static 'js/input.js' %}"></script>-->
+    <script src="{% static 'node_modules/simple-mask-money/lib/simple-mask-money.js' %}"></script>
+    <script>
+ 
+      // configuration
+      let args = {
+        prefix: '',
+        suffix: '',
+        fixed: true,
+        fractionDigits: 2,
+        decimalSeparator: '.',
+        thousandsSeparator: ','
+      };
+ 
+      // select the element
+      let input = SimpleMaskMoney.setMask('#monthly-income', args);
+ 
+      // This method return value of your input in format number to save in your database
+      input.formatToNumber();
+ 
+    </script> 
 {% endblock %}

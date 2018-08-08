@@ -2,7 +2,6 @@
 <html lang="en">
     <head>
 {% load staticfiles %}
-{% load djmoney %}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
@@ -29,6 +28,9 @@
                 AMPC
             </a>
             <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+            <div class="navbar navbar-brand">
+                <span>Head Office</span>
+            </div>
             <ul class="navbar-nav px-3">
                 <li class="nav-item text-nowrap">
                     <a class="nav-link" href="{% url 'login' %}">

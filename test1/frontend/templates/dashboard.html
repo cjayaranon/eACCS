@@ -55,8 +55,8 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-4" id="timeS">
-                <p><i class="fas fa-clock fa-lg fa-fw"></i>{% now "h:i:s" %}<span class="badge badge-light">{% now "A" %}</span></p>
+            <div class="col-md-4">
+                <p><span class="fas fa-clock fa-lg fa-fw"></span><label id="timeS" style="margin-bottom: 0px;"></label></p>
                 <p><i class="fas fa-calendar-check fa-lg fa-fw"></i>{% now "F j Y" %}</p>
             </div>
         </div>
@@ -195,4 +195,19 @@
           </div>
 -->
     </main>
+
+<!--
+    <script>
+        window.onload = setupRefresh();
+        
+        function setupRefresh(){
+            setInterval("refreshBlock();", 1000);
+        }
+        function refreshBlock(){
+            var d = new Date();
+            document.getElementById('timeS').innerHTML = d.toLocaleTimeString();
+        }
+    </script>
+-->
+    <script src="{% static 'js/server-time.js' %}"></script>
 {% endblock %}

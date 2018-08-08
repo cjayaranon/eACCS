@@ -4,7 +4,6 @@ from django.conf import settings
 from django.shortcuts import render
 from django.views.generic import View
 from django_countries.fields import countries
-from djmoney.money import Money
 
 class Login(View):
     def get(self, request, *args, **kwargs):
@@ -13,7 +12,8 @@ class Login(View):
     
 class MainMenu(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'dashboard.html', {})
+        context = {}
+        return render(request, 'dashboard.html', context)
 
 
 class FrontOffice(View):

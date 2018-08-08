@@ -12,7 +12,8 @@
 *.sqlite3
 local_settings.py
 settings_local.py
-var/log/
-Users/migrations
+/var/log/
+/Users/migrations
 clients/migrations
-test1/static
+/test1/static
+/static
