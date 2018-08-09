@@ -141,7 +141,7 @@
 
                     <div class="col-md-6 mb-3">
                         <label for="lastName">Last name</label>
-                        <input type="text" class="form-control" id="lastName" required>
+                        <input type="text" class="form-control cap-field" id="lastName" required>
                         <div class="invalid-feedback">
                             Valid last name is required.
                         </div>
@@ -149,7 +149,7 @@
                     
                     <div class="col-md-6 mb-3">
                         <label for="firstName">First name</label>
-                        <input type="text" class="form-control" id="firstName" required>
+                        <input type="text" class="form-control cap-field" id="firstName" required>
                         <div class="invalid-feedback">
                             Valid first name is required.
                         </div>
@@ -160,13 +160,13 @@
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="middleName">Middle name</label>
-                        <input type="text" class="form-control" id="middleName" placeholder="" value="">
+                        <input type="text" class="form-control cap-field" id="middleName" placeholder="" value="">
                     </div>
                     
                     <div class="col-md-6 mb-3">
                         <div class="form-label-group">
                             <label for="suffix">Suffix</label>
-                            <input type="text" class="form-control" id="suffix" placeholder="Jr/Sr/III..." value="">
+                            <input type="text" class="form-control cap-field" id="suffix" placeholder="Jr/Sr/III..." value="">
                         </div>
                     </div>
                 </div>
@@ -242,7 +242,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-ruler-vertical fa-sm"></i></span>
                             </div>
-                            <input type="number" class="form-control" id="height" min="0.5" step="0.01" required>
+                            <input type="text" class="form-control" id="height" min="0.5" step="0.01" required>
                             <div class="input-group-append">
                                 <select class="form-control btn-light-secondary" id="height-unit" required>
                                     <option value="metres">metres</option>
@@ -260,7 +260,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-weight-hanging fa-sm"></i></span>
                             </div>
-                            <input type="text" class="form-control" id="weight" min="2.20462" required>
+                            <input type="text" class="form-control" id="weight" min="2.20" required>
                             <div class="input-group-append">
                                 <select class="form-control btn-light-secondary" id="weight-unit" required>
                                     <option value="kgs">kilograms</option>
@@ -281,28 +281,28 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control" id="room_number" placeholder="Unit/Room No./Floor">
+                        <input type="text" class="form-control cap-field" id="room_number" placeholder="Unit/Room No./Floor">
                     </div>
                     <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control" id="bldg" placeholder="Building Name">
+                        <input type="text" class="form-control cap-field" id="bldg" placeholder="Building Name">
                     </div>
                     <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control" id="lot" placeholder="Lot/Block/House/Bldg No.">
+                        <input type="text" class="form-control cap-field" id="lot" placeholder="Lot/Block/House/Bldg No.">
                     </div>
                 </div>
                 
                 <div class="row">
                     <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control" id="street" placeholder="Street" required>
+                        <input type="text" class="form-control cap-field" id="street" placeholder="Street" required>
                         <div class="invalid-feedback">
                             Please provide a valid street.
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control" id="subdivision" placeholder="Subdivision/Village">
+                        <input type="text" class="form-control cap-field" id="subdivision" placeholder="Subdivision/Village">
                     </div>
                     <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control" id="barangay" placeholder="Barangay" required>
+                        <input type="text" class="form-control cap-field" id="barangay" placeholder="Barangay" required>
                         <div class="invalid-feedback">
                             Please select a valid barangay.
                         </div>
@@ -311,13 +311,13 @@
                 
                 <div class="row">
                     <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control" id="city" placeholder="City/Municipality" required>
+                        <input type="text" class="form-control cap-field" id="city" placeholder="City/Municipality" required>
                         <div class="invalid-feedback">
                             Please select a valid city
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control" id="province" placeholder="Province" required>
+                        <input type="text" class="form-control cap-field" id="province" placeholder="Province" required>
                         <div class="invalid-feedback">
                             Please select a valid province.
                         </div>
@@ -345,34 +345,34 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control" id="room_number" placeholder="Unit/Room No./Floor">
+                        <input type="text" class="form-control cap-field" id="room_number" placeholder="Unit/Room No./Floor">
                     </div>
                     <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control" id="bldg" placeholder="Building Name">
+                        <input type="text" class="form-control cap-field" id="bldg" placeholder="Building Name">
                     </div>
                     <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control" id="lot" placeholder="Lot/Block/House/Bldg No.">
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control" id="street" placeholder="Street">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control" id="subdivision" placeholder="Subdivision/Village">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control" id="barangay" placeholder="Barangay">
+                        <input type="text" class="form-control cap-field" id="lot" placeholder="Lot/Block/House/Bldg No.">
                     </div>
                 </div>
                 
                 <div class="row">
                     <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control" id="city" placeholder="City/Municipality">
+                        <input type="text" class="form-control cap-field" id="street" placeholder="Street">
                     </div>
                     <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control" id="province" placeholder="Province">
+                        <input type="text" class="form-control cap-field" id="subdivision" placeholder="Subdivision/Village">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <input type="text" class="form-control cap-field" id="barangay" placeholder="Barangay">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <input type="text" class="form-control cap-field" id="city" placeholder="City/Municipality">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <input type="text" class="form-control cap-field" id="province" placeholder="Province">
                     </div>
                     <div class="col-md-4 mb-3">
 {% load countries %}
@@ -457,7 +457,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user-secret fa-sm"></i></span>
                         </div>
-                        <input type="text" class="form-control" id="profession" required>
+                        <input type="text" class="form-control cap-field" id="profession" required>
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
@@ -466,7 +466,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><strong>&#8369</strong></span>
                         </div>
-                        <input type="text" class="form-control" id="monthly-income" placeholder="00 000.00" min="0" step="0.01" required>
+                        <input type="text" class="form-control" id="monthly-income" min="0" step="0.01" required>
                         <div class="invalid-feedback">
                             Please provide valid monetary values.
                         </div>
@@ -522,8 +522,6 @@
             document.getElementById("client-sig-error").innerHTML = "Please provide a valid signature photo"
         }
     </script>
-    
-<!--    <script src="{% static 'js/input.js' %}"></script>-->
     <script src="{% static 'node_modules/simple-mask-money/lib/simple-mask-money.js' %}"></script>
     <script>
  
@@ -543,5 +541,11 @@
       // This method return value of your input in format number to save in your database
       input.formatToNumber();
  
-    </script> 
+    </script>
+    <script src="{% static 'node_modules/jquery.numeric/jquery.numeric.min.js' %}"></script>
+    <script>
+        $('#weight').numeric({decimalPlaces: 2});
+        $('#height').numeric({decimalPlaces: 2});
+    </script>
+    <script src="{% static 'js/input.js' %}"></script>
 {% endblock %}

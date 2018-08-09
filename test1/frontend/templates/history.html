@@ -1,0 +1,8 @@
+{% block title %}{% endblock %}
+
+{% block content %}
+{% load_visited 'visited' %}
+{% for title, uri, dt in visited %}
+    <a href="{{ uri }}">{{ title }} {% trans "at" %} {{ dt }}</a><br/>
+{% endfor %}
+{% endblock %}

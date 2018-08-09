@@ -34,8 +34,9 @@
                     Recently Used
                 </button>
                 <div class="dropdown-menu" aria-labelledby="drpdown-recent">
-                    <a class="dropdown-item" href="#">{% lorem 1 w random %}</a>
-                    <a class="dropdown-item" href="#">{% lorem 1 w random %}</a>
+                    {% for items in item %}
+                    <a class="dropdown-item" href="#">{{ items }}</a>
+                    {% endfor %}
                 </div>
             </div>
         </div>

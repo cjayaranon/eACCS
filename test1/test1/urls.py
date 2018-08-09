@@ -23,4 +23,5 @@ urlpatterns = [
     path('main/', views.MainMenu.as_view(), name="home"),
     path('main/front-office', views.FrontOffice.as_view(), name="front-office"),
     path('main/front-office/new-client', views.NewClient.as_view(), name="new-client"),
+    path('404', views.Error404.as_view(), name="error"),
 ]
