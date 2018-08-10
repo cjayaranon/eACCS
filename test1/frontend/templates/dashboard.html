@@ -5,61 +5,37 @@
 <link href="{% static 'css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
 <link href="{% static 'css/bootstrap/dashboard.css' %}" rel="stylesheet">
 <link href="{% static 'node_modules/fortawesome/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+<!--BREADCRUMB-->
+{% block breadcrumb %}
+{{ block.super}}<li class="breadcrumb-item active">Dashboard</li>
+{% endblock breadcrumb %}
+<!--END BREADCRUMB-->
+
 {% endblock %}
 
 {% block content %}
 <title>AMPC|Dashboard</title>
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-<!--BREADCRUMBS-->
-            <div class="breads">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item active" aria-current="page">
-                            Dashboard
-                        </li>
-                    </ol>
-                </nav>
-            </div>
-<!--END BREADCRUMBS-->
-            <div class="btn-toolbar mb-2 mb-md-0">
-<!--
-                    <div class="btn-group mr-2">
-                        <button class="btn btn-sm btn-outline-secondary">Share</button>
-                        <button class="btn btn-sm btn-outline-secondary">Export</button>
-                    </div>
--->
-                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="drpdown-recent" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-clipboard-list fa-sm"></i>
-                    Recently Used
-                </button>
-                <div class="dropdown-menu" aria-labelledby="drpdown-recent">
-                    <a class="dropdown-item" href="#">{% lorem 1 w random %}</a>
-                    <a class="dropdown-item" href="#">{% lorem 1 w random %}</a>
-                </div>
-            </div>
+<div class="row">
+    <div class="col-md-8">
+        <h2 class="h2">Welcome!</h2>
+        <p>{% lorem 1 p random %}</p>
+        <div>
+            <a href="#" class="btn btn-success btn-block shadow">
+                <i class="fas fa-hourglass-start"></i>
+                Start your Day
+            </a>
+            <a href="#" class="btn btn-outline-secondary btn-block shadow">
+                <i class="fas fa-hourglass-end"></i>
+                End your Day
+            </a>
         </div>
-            
-        <div class="row">
-            <div class="col-md-8">
-                <h2 class="h2">Welcome!</h2>
-                <p>{% lorem 1 p random %}</p>
-                <div>
-                    <a href="#" class="btn btn-success btn-block shadow">
-                        <i class="fas fa-hourglass-start"></i>
-                        Start your Day
-                    </a>
-                    <a href="#" class="btn btn-outline-secondary btn-block shadow">
-                        <i class="fas fa-hourglass-end"></i>
-                        End your Day
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4" id="timeS">
-                <p><i class="fas fa-clock fa-lg fa-fw"></i>{% now "h:i:s" %}<span class="badge badge-light">{% now "A" %}</span></p>
-                <p><i class="fas fa-calendar-check fa-lg fa-fw"></i>{% now "F j Y" %}</p>
-            </div>
-        </div>
+    </div>
+    <div class="col-md-4">
+        <p><span class="fas fa-clock fa-lg fa-fw"></span><label id="timeS" style="margin-bottom: 0px;"></label></p>
+        <p><i class="fas fa-calendar-check fa-lg fa-fw"></i>{% now "F j Y" %}</p>
+    </div>
+</div>
             
 
 <!--          <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>-->
@@ -194,5 +170,19 @@
             </table>
           </div>
 -->
-    </main>
+
+<!--
+    <script>
+        window.onload = setupRefresh();
+        
+        function setupRefresh(){
+            setInterval("refreshBlock();", 1000);
+        }
+        function refreshBlock(){
+            var d = new Date();
+            document.getElementById('timeS').innerHTML = d.toLocaleTimeString();
+        }
+    </script>
+-->
+    <script src="{% static 'js/server-time.js' %}"></script>
 {% endblock %}
