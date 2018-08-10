@@ -10,6 +10,7 @@ def visit_history(request, name):
 #    visit = request.session.get('visit')
     if not 'saved' in request.session or not request.session['saved']:
         request.session['visit'] = [name]
+        saved_visit = request.session['visit']
     else:
         saved_visit = request.session['visit']
         saved_visit.append(name)
