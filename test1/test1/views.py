@@ -28,6 +28,7 @@ class MainMenu(View):
         
         context = {'item':visit}
         return render(request, 'dashboard.html', context)
+#        return render(request, 'main.html', context)
 
 
 class FrontOffice(View):
