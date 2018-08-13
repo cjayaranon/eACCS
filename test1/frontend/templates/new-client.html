@@ -18,476 +18,466 @@
     
 <!--FONTAWESOME CDN-->
 <!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">-->
+{% block breadcrumb %}
+{{ block.super }}<li class="breadcrumb-item active">New Client</li>
+{% endblock breadcrumb %}
+
 {% endblock %}
 
 {% block content %}
 <title>AMPC|Add New Client</title>
-<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-    <div class="py-5 text-center">
-        <div class="breads">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item" aria-current="page">
-                        <a href="{% url 'front-office' %}" class="text-muted">Front Office</a>
-                    </li>
-                    <li class="breadcrumb-item active">
-                        New Client
-                    </li>
-                </ol>
-            </nav>
-        </div>
-<!--END BREADCRUMBS-->
-        <h2 class="h3">New Client form</h2>
-        <p class="lead">Please fill the form completely.</p>
-    </div>
-    <div class="row">
+<div class="py-5 text-center">
+    <h2 class="h3">New Client form</h2>
+    <p class="lead">Please fill the form completely.</p>
+</div>
+<div class="row">
 <!--START CART-->
-        <div class="col-md-4 order-md-2 mb-4">
-            &nbsp;
-            <ul class="list-group mb-3">
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
-                    <div>
-                        <h6 class="my-0">Client Photo</h6>
-                        &nbsp;
-                        <div class="fileinput fileinput-new" data-provides="fileinput">
-                            <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: auto; height: auto">
-                            </div>
-                            <div>
-                                <span class="btn btn-outline-success btn-sm btn-file">
-                                    <span class="fileinput-new"><i class="fas fa-cloud-upload-alt fa-lg fa-fw"></i> Select image</span>
-                                    <span class="fileinput-exists"><i class="fas fa-exchange-alt fa-lg fa-fw"></i> Change</span>
-                                    <input type="file" name="..." id="client-photo" required>
-                                </span>
-                                <a href="#" class="btn btn-outline-danger btn-sm fileinput-exists" data-dismiss="fileinput"><i class="fas fa-window-close fa-lg fa-fw"></i> Remove</a>
-                                <span class="badge badge-success badge-pill">5 MB max</span>
-                            </div>
+    <div class="col-md-4 order-md-2 mb-4">
+        &nbsp;
+        <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                    <h6 class="my-0">Client Photo</h6>
+                    &nbsp;
+                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: auto; height: auto">
                         </div>
-                        <p style="height: 20%; width: 100%; color: red;" id="client-photo-error"></p>
-                    </div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
-                    <div>
-                        <h6 class="my-0">Signature Image</h6>
-                        &nbsp;
-                        <div class="fileinput fileinput-new" data-provides="fileinput">
-                            <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: auto; height: auto">
-                            </div>
-                            <div>
-                                <span class="btn btn-outline-success btn-sm btn-file">
-                                    <span class="fileinput-new"><i class="fas fa-cloud-upload-alt fa-lg fa-fw"></i> Select image</span>
-                                    <span class="fileinput-exists">
-                                        <i class="fas fa-exchange-alt fa-lg fa-fw"></i> Change</span>
-                                    <input type="file" name="..." id="client-sig">
-                                </span>
-                                <a href="#" class="btn btn-outline-danger btn-sm fileinput-exists" data-dismiss="fileinput">
-                                    <i class="fas fa-window-close fa-lg fa-fw"></i> Remove</a>
-                                <span class="badge badge-success badge-pill">5 MB max</span>
-                            </div>
+                        <div>
+                            <span class="btn btn-outline-success btn-sm btn-file">
+                                <span class="fileinput-new"><i class="fas fa-cloud-upload-alt fa-lg fa-fw"></i> Select image</span>
+                                <span class="fileinput-exists"><i class="fas fa-exchange-alt fa-lg fa-fw"></i> Change</span>
+                                <input type="file" name="..." id="client-photo" required>
+                            </span>
+                            <a href="#" class="btn btn-outline-danger btn-sm fileinput-exists" data-dismiss="fileinput"><i class="fas fa-window-close fa-lg fa-fw"></i> Remove</a>
+                            <span class="badge badge-success badge-pill">5 MB max</span>
                         </div>
-                        <p style="height: 20%; width: 100%; color: red;" id="client-sig-error"></p>
                     </div>
-                </li>
+                    <p style="height: 20%; width: 100%; color: red;" id="client-photo-error"></p>
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                    <h6 class="my-0">Signature Image</h6>
+                    &nbsp;
+                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: auto; height: auto">
+                        </div>
+                        <div>
+                            <span class="btn btn-outline-success btn-sm btn-file">
+                                <span class="fileinput-new"><i class="fas fa-cloud-upload-alt fa-lg fa-fw"></i> Select image</span>
+                                <span class="fileinput-exists">
+                                    <i class="fas fa-exchange-alt fa-lg fa-fw"></i> Change</span>
+                                <input type="file" name="..." id="client-sig">
+                            </span>
+                            <a href="#" class="btn btn-outline-danger btn-sm fileinput-exists" data-dismiss="fileinput">
+                                <i class="fas fa-window-close fa-lg fa-fw"></i> Remove</a>
+                            <span class="badge badge-success badge-pill">5 MB max</span>
+                        </div>
+                    </div>
+                    <p style="height: 20%; width: 100%; color: red;" id="client-sig-error"></p>
+                </div>
+            </li>
 <!--
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
-                    <div>
-                        <h6 class="my-0">Third item</h6>
-                        <small class="text-muted">Brief description</small>
-                    </div>
-                    <span class="text-muted">$5</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between bg-light">
-                    <div class="text-success">
-                        <h6 class="my-0">Promo code</h6>
-                        <small>EXAMPLECODE</small>
-                    </div>
-                    <span class="text-success">-$5</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>Total (USD)</span>
-                    <strong>$20</strong>
-                </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                    <h6 class="my-0">Third item</h6>
+                    <small class="text-muted">Brief description</small>
+                </div>
+                <span class="text-muted">$5</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between bg-light">
+                <div class="text-success">
+                    <h6 class="my-0">Promo code</h6>
+                    <small>EXAMPLECODE</small>
+                </div>
+                <span class="text-success">-$5</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+                <span>Total (USD)</span>
+                <strong>$20</strong>
+            </li>
 -->
-            </ul>
+        </ul>
 <!--END PRODUCT LIST-->
 <!--
-            <form class="card p-2">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Promo  code">
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-secondary">Redeem</button>
-                    </div>
+        <form class="card p-2">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Promo  code">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-secondary">Redeem</button>
                 </div>
-            </form>
+            </div>
+        </form>
 -->
-        </div>
+    </div>
 <!--END RIGHT SIDE-->
-        <div class="col-md-8 order-md-1">
-            <h4 class="mb-3">Personal information</h4>
-            <form class="needs-validation" id='form' novalidate>             
-                <div class="mb-3">
-                    <label for="username">Account Name</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-book fa-sm"></i></span>
-                        </div>
-                        <input type="text" class="form-control rounded-right" id="accountname" required>
-                        <div class="invalid-feedback" style="width: 100%;">
-                            An account name is required.
-                        </div>
+    <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Personal information</h4>
+        <form class="needs-validation" id='form' novalidate>             
+            <div class="mb-3">
+                <label for="accountname">Account Name</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-book fa-sm"></i></span>
+                    </div>
+                    <input type="text" class="form-control rounded-right" id="accountname" required>
+                    <div class="invalid-feedback" style="width: 100%;">
+                        An account name is required.
                     </div>
                 </div>
-                
-                <div class="row">
+            </div>
 
-                    <div class="col-md-6 mb-3">
-                        <label for="lastName">Last name</label>
-                        <input type="text" class="form-control cap-field" id="lastName" required>
-                        <div class="invalid-feedback">
-                            Valid last name is required.
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 mb-3">
-                        <label for="firstName">First name</label>
-                        <input type="text" class="form-control cap-field" id="firstName" required>
-                        <div class="invalid-feedback">
-                            Valid first name is required.
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="middleName">Middle name</label>
-                        <input type="text" class="form-control cap-field" id="middleName" placeholder="" value="">
-                    </div>
-                    
-                    <div class="col-md-6 mb-3">
-                        <div class="form-label-group">
-                            <label for="suffix">Suffix</label>
-                            <input type="text" class="form-control cap-field" id="suffix" placeholder="Jr/Sr/III..." value="">
-                        </div>
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <label for="lastName">Last name</label>
+                    <input type="text" class="form-control cap-field" id="lastName" required>
+                    <div class="invalid-feedback">
+                        Valid last name is required.
                     </div>
                 </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="firstName">First name</label>
+                    <input type="text" class="form-control cap-field" id="firstName" required>
+                    <div class="invalid-feedback">
+                        Valid first name is required.
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="middleName">Middle name</label>
+                    <input type="text" class="form-control cap-field" id="middleName" placeholder="" value="">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="form-label-group">
+                        <label for="suffix">Suffix</label>
+                        <input type="text" class="form-control cap-field" id="suffix" placeholder="Jr/Sr/III..." value="">
+                    </div>
+                </div>
+            </div>
 
 <!--
-                <div class="mb-3">
-                    <label for="email">Email <span class="text-muted">(Optional)</span></label>
-                    <input type="email" class="form-control" id="email" placeholder="you@example.com">
-                        <div class="invalid-feedback">
-                            Please enter a valid email address for shipping updates.
-                        </div>
-                </div>
+            <div class="mb-3">
+                <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                    <div class="invalid-feedback">
+                        Please enter a valid email address for shipping updates.
+                    </div>
+            </div>
 -->
-                <div class="mb-3">
-                    <label for="username">Date of Birth</label>
+            <div class="mb-3">
+                <label for="username">Date of Birth</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-calendar-alt fa-sm"></i></span>
+                    </div>
+                    <input type="date" class="form-control rounded-right" date-date-format="mm/dd/yyyy" data-provide="datepicker" placeholder="mm/dd/yyyy" id="datepicker" min="1900-01-01" required>
+                    <div class="invalid-feedback" style="width: 100%;">
+                        Your date of birth is required.
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="state">Sex</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-calendar-alt fa-sm"></i></span>
+                            <span class="input-group-text"><i class="fas fa-venus-mars fa-sm"></i></span>
                         </div>
-                        <input type="date" class="form-control rounded-right" date-date-format="mm/dd/yyyy" data-provide="datepicker" placeholder="mm/dd/yyyy" id="datepicker" min="1900-01-01" required>
-                        <div class="invalid-feedback" style="width: 100%;">
-                            Your date of birth is required.
+                        <select class="form-control rounded-right" id="sex" required>
+                            <option value="" disabled selected>Choose...</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>N/A</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Please provide a valid sexual identity.
                         </div>
                     </div>
                 </div>
-                
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="state">Sex</label>
+
+                <div class="col-md-6 mb-3">
+                    <div class="form-label-group">
+                        <label for="state">Civil Status</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-venus-mars fa-sm"></i></span>
+                                <span class="input-group-text"><i class="fas fa-user-friends fa-sm"></i></span>
                             </div>
-                            <select class="form-control rounded-right" id="sex" required>
+                            <select class="form-control rounded-right" id="civil-status" required>
                                 <option value="" disabled selected>Choose...</option>
-                                <option>Male</option>
-                                <option>Female</option>
-                                <option>N/A</option>
+                                <div class="dropdown-divider"></div>
+                                <option class="dropdown-item">Single</option>
+                                <option class="dropdown-item">Married</option>
+                                <option class="dropdown-item">Widowed</option>
+                                <option class="dropdown-item">Legally Separated</option>
                             </select>
                             <div class="invalid-feedback">
-                              Please provide a valid sexual identity.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 mb-3">
-                        <div class="form-label-group">
-                            <label for="state">Civil Status</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-user-friends fa-sm"></i></span>
-                                </div>
-                                <select class="form-control rounded-right" id="civil-status" required>
-                                    <option value="" disabled selected>Choose...</option>
-                                    <div class="dropdown-divider"></div>
-                                    <option class="dropdown-item">Single</option>
-                                    <option class="dropdown-item">Married</option>
-                                    <option class="dropdown-item">Widowed</option>
-                                    <option class="dropdown-item">Legally Separated</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                  Please provide a valid status.
-                                </div>
+                              Please provide a valid status.
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="height">Height</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-ruler-vertical fa-sm"></i></span>
-                            </div>
-                            <input type="text" class="form-control" id="height" min="0.5" step="0.01" required>
-                            <div class="input-group-append">
-                                <select class="form-control btn-light-secondary" id="height-unit" required>
-                                    <option value="metres">metres</option>
-                                    <option value="feet">feet</option>
-                                </select>
-                            </div>
-                            <div class="invalid-feedback">
-                                Valid height is required.
-                            </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="height">Height</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-ruler-vertical fa-sm"></i></span>
                         </div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="weight">Weight</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-weight-hanging fa-sm"></i></span>
-                            </div>
-                            <input type="text" class="form-control" id="weight" min="2.20" required>
-                            <div class="input-group-append">
-                                <select class="form-control btn-light-secondary" id="weight-unit" required>
-                                    <option value="kgs">kilograms</option>
-                                    <option value="lbs">pounds</option>
-                                </select>
-                            </div>
-                            <div class="invalid-feedback">
-                                Valid weight is required.
-                            </div>
+                        <input type="text" class="form-control" id="height" min="0.5" step="0.01" required>
+                        <div class="input-group-append">
+                            <select class="form-control btn-light-secondary" id="height-unit" required>
+                                <option value="metres">metres</option>
+                                <option value="feet">feet</option>
+                            </select>
+                        </div>
+                        <div class="invalid-feedback">
+                            Valid height is required.
                         </div>
                     </div>
                 </div>
+                <div class="col-md-6 mb-3">
+                    <label for="weight">Weight</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-weight-hanging fa-sm"></i></span>
+                        </div>
+                        <input type="text" class="form-control" id="weight" min="2.20" required>
+                        <div class="input-group-append">
+                            <select class="form-control btn-light-secondary" id="weight-unit" required>
+                                <option value="kgs">kilograms</option>
+                                <option value="lbs">pounds</option>
+                            </select>
+                        </div>
+                        <div class="invalid-feedback">
+                            Valid weight is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
 <!--MAILING ADDRESS 1-->
-                <div class="row mod-row">
-                    <div class="col-md-12 mb-3">
-                        <label>Mailing Address</label>
+            <div class="row mod-row">
+                <div class="col-md-12 mb-3">
+                    <label>Mailing Address</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <input type="text" class="form-control cap-field" id="room_number" placeholder="Unit/Room No./Floor">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <input type="text" class="form-control cap-field" id="bldg" placeholder="Building Name">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <input type="text" class="form-control cap-field" id="lot" placeholder="Lot/Block/House/Bldg No.">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <input type="text" class="form-control cap-field" id="street" placeholder="Street" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid street.
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control cap-field" id="room_number" placeholder="Unit/Room No./Floor">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control cap-field" id="bldg" placeholder="Building Name">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control cap-field" id="lot" placeholder="Lot/Block/House/Bldg No.">
+                <div class="col-md-4 mb-3">
+                    <input type="text" class="form-control cap-field" id="subdivision" placeholder="Subdivision/Village">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <input type="text" class="form-control cap-field" id="barangay" placeholder="Barangay" required>
+                    <div class="invalid-feedback">
+                        Please select a valid barangay.
                     </div>
                 </div>
-                
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control cap-field" id="street" placeholder="Street" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid street.
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control cap-field" id="subdivision" placeholder="Subdivision/Village">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control cap-field" id="barangay" placeholder="Barangay" required>
-                        <div class="invalid-feedback">
-                            Please select a valid barangay.
-                        </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <input type="text" class="form-control cap-field" id="city" placeholder="City/Municipality" required>
+                    <div class="invalid-feedback">
+                        Please select a valid city
                     </div>
                 </div>
-                
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control cap-field" id="city" placeholder="City/Municipality" required>
-                        <div class="invalid-feedback">
-                            Please select a valid city
-                        </div>
+                <div class="col-md-4 mb-3">
+                    <input type="text" class="form-control cap-field" id="province" placeholder="Province" required>
+                    <div class="invalid-feedback">
+                        Please select a valid province.
                     </div>
-                    <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control cap-field" id="province" placeholder="Province" required>
-                        <div class="invalid-feedback">
-                            Please select a valid province.
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
+                </div>
+                <div class="col-md-4 mb-3">
 {% load countries %}
 {% get_countries as countries %}
-                        <select class="form-control" id="country" required>
-                            <option value="" disabled selected>Country</option>
+                    <select class="form-control" id="country" required>
+                        <option value="" disabled selected>Country</option>
 {% for country in countries %}
-                            <option value="{{country.code}}">{{ country.name }}</option>
+                        <option value="{{country.code}}">{{ country.name }}</option>
 {% endfor %}
-                        </select>
-                        <div class="invalid-feedback">
-                            Please select a valid country.
-                        </div>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select a valid country.
                     </div>
                 </div>
+            </div>
 <!--END MAILING ADDRESS 1-->
 <!--MAILING ADDRESS 2-->
-                <div class="row mod-row">
-                    <div class="col-md-12 mb-3">
-                        <label for="room_number">Mailing Address 2<span class="text-muted"> (optional)</span></label>
-                    </div>
+            <div class="row mod-row">
+                <div class="col-md-12 mb-3">
+                    <label for="room_number">Mailing Address 2<span class="text-muted"> (optional)</span></label>
                 </div>
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control cap-field" id="room_number" placeholder="Unit/Room No./Floor">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control cap-field" id="bldg" placeholder="Building Name">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control cap-field" id="lot" placeholder="Lot/Block/House/Bldg No.">
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <input type="text" class="form-control cap-field" id="room_number" placeholder="Unit/Room No./Floor">
                 </div>
-                
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control cap-field" id="street" placeholder="Street">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control cap-field" id="subdivision" placeholder="Subdivision/Village">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control cap-field" id="barangay" placeholder="Barangay">
-                    </div>
+                <div class="col-md-4 mb-3">
+                    <input type="text" class="form-control cap-field" id="bldg" placeholder="Building Name">
                 </div>
-                
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control cap-field" id="city" placeholder="City/Municipality">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <input type="text" class="form-control cap-field" id="province" placeholder="Province">
-                    </div>
-                    <div class="col-md-4 mb-3">
+                <div class="col-md-4 mb-3">
+                    <input type="text" class="form-control cap-field" id="lot" placeholder="Lot/Block/House/Bldg No.">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <input type="text" class="form-control cap-field" id="street" placeholder="Street">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <input type="text" class="form-control cap-field" id="subdivision" placeholder="Subdivision/Village">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <input type="text" class="form-control cap-field" id="barangay" placeholder="Barangay">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <input type="text" class="form-control cap-field" id="city" placeholder="City/Municipality">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <input type="text" class="form-control cap-field" id="province" placeholder="Province">
+                </div>
+                <div class="col-md-4 mb-3">
 {% load countries %}
 {% get_countries as countries %}
-                        <select class="form-control" id="country">
-                            <option value="" disabled selected>Country</option>
-                            <div class="dropdown-divider"></div>
+                    <select class="form-control" id="country">
+                        <option value="" disabled selected>Country</option>
+                        <div class="dropdown-divider"></div>
 {% for country in countries %}
-                            <option value="{{country.code}}">{{ country.name }}</option>
+                        <option value="{{country.code}}">{{ country.name }}</option>
 {% endfor %}
-                        </select>
-                        <div class="invalid-feedback">
-                            Please select a valid country.
-                        </div>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select a valid country.
                     </div>
                 </div>
-
-            <hr class="mb-4">
-                
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="same-address">
-                <label class="custom-control-label" for="same-address">Mailing address 2 is the same as my mailing address 1</label>
             </div>
-            
-            <hr class="mb-4">
+
+        <hr class="mb-4">
+
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="same-address">
+            <label class="custom-control-label" for="same-address">Mailing address 2 is the same as my mailing address 1</label>
+        </div>
+
+        <hr class="mb-4">
 <!--END MAILING ADDRESS 2-->
 <!--
-            <h4 class="mb-3">Payment</h4>
+        <h4 class="mb-3">Payment</h4>
 
-            <div class="d-block my-3">
-              <div class="custom-control custom-radio">
-                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                <label class="custom-control-label" for="credit">Credit card</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                <label class="custom-control-label" for="debit">Debit card</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-                <label class="custom-control-label" for="paypal">PayPal</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="cc-name">Name on card</label>
-                <input type="text" class="form-control" id="cc-name" placeholder="" required>
-                <small class="text-muted">Full name as displayed on card</small>
-                <div class="invalid-feedback">
-                  Name on card is required
-                </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="cc-number">Credit card number</label>
-                <input type="text" class="form-control" id="cc-number" placeholder="" required>
-                <div class="invalid-feedback">
-                  Credit card number is required
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3 mb-3">
-                <label for="cc-expiration">Expiration</label>
-                <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
-                <div class="invalid-feedback">
-                  Expiration date required
-                </div>
-              </div>
-              <div class="col-md-3 mb-3">
-                <label for="cc-cvv">CVV</label>
-                <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-                <div class="invalid-feedback">
-                  Security code required
-                </div>
-              </div>
-            </div>
--->
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label for="profession">Profession</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-user-secret fa-sm"></i></span>
-                        </div>
-                        <input type="text" class="form-control cap-field" id="profession" required>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="profession">Monthly Income</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><strong>&#8369</strong></span>
-                        </div>
-                        <input type="text" class="form-control" id="monthly-income" min="0" step="0.01" required>
-                        <div class="invalid-feedback">
-                            Please provide valid monetary values.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr class="mb-4">
-            <button class="btn btn-success btn-lg btn-block" type="submit" onclick="checkImg()">Continue to submission</button>
-          </form>
+        <div class="d-block my-3">
+          <div class="custom-control custom-radio">
+            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+            <label class="custom-control-label" for="credit">Credit card</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+            <label class="custom-control-label" for="debit">Debit card</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+            <label class="custom-control-label" for="paypal">PayPal</label>
+          </div>
         </div>
-      </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="cc-name">Name on card</label>
+            <input type="text" class="form-control" id="cc-name" placeholder="" required>
+            <small class="text-muted">Full name as displayed on card</small>
+            <div class="invalid-feedback">
+              Name on card is required
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="cc-number">Credit card number</label>
+            <input type="text" class="form-control" id="cc-number" placeholder="" required>
+            <div class="invalid-feedback">
+              Credit card number is required
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <label for="cc-expiration">Expiration</label>
+            <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+            <div class="invalid-feedback">
+              Expiration date required
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="cc-cvv">CVV</label>
+            <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+            <div class="invalid-feedback">
+              Security code required
+            </div>
+          </div>
+        </div>
+-->
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="profession">Profession</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user-secret fa-sm"></i></span>
+                    </div>
+                    <input type="text" class="form-control cap-field" id="profession" required>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="profession">Monthly Income</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><strong>&#8369</strong></span>
+                    </div>
+                    <input type="text" class="form-control" id="monthly-income" min="0" step="0.01" required>
+                    <div class="invalid-feedback">
+                        Please provide valid monetary values.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="mb-4">
+        <button class="btn btn-success btn-lg btn-block" type="submit" onclick="checkImg()">Continue to submission</button>
+        </form>
+    </div>
+</div>
 
-      <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; 2018 AMPC</p>
-        <ul class="list-inline">
-          <li class="list-inline-item"><a href="#">Privacy</a></li>
-          <li class="list-inline-item"><a href="#">Terms</a></li>
-          <li class="list-inline-item"><a href="#">Support</a></li>
-        </ul>
-      </footer>
-☺</main>
+<footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2018 AMPC</p>
+    <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+</footer>
+
     <script src="{% static 'js/validity-check.js' %}">
       // Example starter JavaScript for disabling form submissions if there are invalid fields
 //      (function() {
