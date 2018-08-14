@@ -66,11 +66,9 @@ body {
  * Content
  */
 
-/*
 [role="main"] {
-  padding-top: 10px;  Space for fixed navbar 
+  padding-top: 10px; /* Space for fixed navbar */
 }
-*/
 
 /*
  * Navbar
