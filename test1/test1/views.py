@@ -1,5 +1,7 @@
 import json
 
+from .test1 import VisitQueue
+
 from django.conf import settings
 from django.shortcuts import render
 from django.views.generic import View
@@ -28,7 +30,8 @@ class Login(View):
 class MainMenu(View):
     def get(self, request, *args, **kwargs):
         name = 'main'
-        visit = visit_history(request, name)
+#        visit = visit_history(request, name)
+        VisitQueue.push(name)
         
         context = {'item':visit, 'nbar':name}
         return render(request, 'dashboard.html', context)
