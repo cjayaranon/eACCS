@@ -171,7 +171,7 @@
             </div>
 -->
             <div class="mb-3">
-                <label for="username">Date of Birth</label>
+                <label for="datepicker">Date of Birth</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-calendar-alt fa-sm"></i></span>
@@ -185,7 +185,7 @@
 
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <label for="state">Sex</label>
+                    <label for="sex">Sex</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-venus-mars fa-sm"></i></span>
@@ -204,7 +204,7 @@
 
                 <div class="col-md-6 mb-3">
                     <div class="form-label-group">
-                        <label for="state">Civil Status</label>
+                        <label for="civil-status">Civil Status</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user-friends fa-sm"></i></span>
@@ -232,12 +232,9 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-ruler-vertical fa-sm"></i></span>
                         </div>
-                        <input type="text" class="form-control" id="height" min="0.5" step="0.01" required>
+                        <input type="text" class="form-control" id="height" required>
                         <div class="input-group-append">
-                            <select class="form-control btn-light-secondary" id="height-unit" required>
-                                <option value="metres">metres</option>
-                                <option value="feet">feet</option>
-                            </select>
+                            <span class="form-control">feet' inches"</span>
                         </div>
                         <div class="invalid-feedback">
                             Valid height is required.
@@ -250,12 +247,9 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-weight-hanging fa-sm"></i></span>
                         </div>
-                        <input type="text" class="form-control" id="weight" min="2.20" required>
+                        <input inputmode="mobile" class="form-control" id="weight" min="0.01" maxlength="5" step="0.01" required>
                         <div class="input-group-append">
-                            <select class="form-control btn-light-secondary" id="weight-unit" required>
-                                <option value="kgs">kilograms</option>
-                                <option value="lbs">pounds</option>
-                            </select>
+                            <span class="form-control">kilograms</span>
                         </div>
                         <div class="invalid-feedback">
                             Valid weight is required.
@@ -451,7 +445,7 @@
                 </div>
             </div>
             <div class="col-md-6 mb-3">
-                <label for="profession">Monthly Income</label>
+                <label for="monthly-income">Monthly Income</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><strong>&#8369</strong></span>
@@ -514,28 +508,30 @@
     </script>
     <script src="{% static 'node_modules/simple-mask-money/lib/simple-mask-money.js' %}"></script>
     <script>
+        // configuration
+        let args = {
+            fixed: true,
+            fractionDigits: 2,
+            decimalSeparator: ".",
+            thousandsSeparator: ","
+        };
+        
+        // select the element
+        let input = SimpleMaskMoney.setMask('#monthly-income', args);
  
-      // configuration
-      let args = {
-        prefix: '',
-        suffix: '',
-        fixed: true,
-        fractionDigits: 2,
-        decimalSeparator: '.',
-        thousandsSeparator: ','
-      };
- 
-      // select the element
-      let input = SimpleMaskMoney.setMask('#monthly-income', args);
- 
-      // This method return value of your input in format number to save in your database
-      input.formatToNumber();
+        // This method return value of your input in format number to save in your database
+        input.formatToNumber();
  
     </script>
-    <script src="{% static 'node_modules/jquery.numeric/jquery.numeric.min.js' %}"></script>
-    <script>
-        $('#weight').numeric({decimalPlaces: 2});
-        $('#height').numeric({decimalPlaces: 2});
-    </script>
+
+<!--Capitalize first letters of relevant fields-->
     <script src="{% static 'js/input.js' %}"></script>
+
+<!--Input mask for specific fields-->
+    <script src="{% static 'node_modules/jquery-mask-plugin/dist/jquery.mask.min.js' %}"></script>
+    <script>
+        $('#height').mask('0\'00\"');
+        $('#weight').mask('00.00');
+        $('#suffix').mask('AAA');
+    </script>
 {% endblock %}
