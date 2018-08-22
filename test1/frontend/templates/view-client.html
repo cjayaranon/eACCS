@@ -1,0 +1,73 @@
+{% extends "main.html" %}
+{% load staticfiles %}
+
+{% block css %}
+<!--Bootstrap core CSS-->
+<link href="{% static 'css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+
+<!--BOOTSTRAP CDN-->
+<!--    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
+
+<!--Custome styles for this template-->
+<link rel="stylesheet" href="{% static 'css/bootstrap/dashboard.css' %}" >
+<link rel="stylesheet" href="{% static 'node_modules/fortawesome/fontawesome-free/css/all.min.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/client_view/client-profile.css' %}" type="text/css">
+
+<!--FONTAWESOME CDN-->
+<!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">-->
+
+<!--BREADCRUMBS-->
+{% block breadcrumb %}
+{{ block.super}}
+<li class="breadcrumb-item">Front Office</li>
+<li class="breadcrumb-item active">View Client</li>
+{% endblock breadcrumb %}
+<!--END BREADCRUMBS-->
+{% endblock css %}
+
+{% block content %}
+<title>Profile | Client Name</title>
+<nav id="home" class="menu">
+    <div class="">
+        <div id="card">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <div class="box sunrise">
+                            {% for n in pic %}
+                            <img src="{{n.clientPhoto.url}}" alt="profile-image" class="profile-img" align="right"/>
+                            {% endfor %}
+                        </div>
+                        <div class="slider">
+                            <div class="box sunset">
+                                &nbsp;
+                                <div class="card bg-transparent">
+                                    <div class="card-body align-middle">
+                                        <div class="info-headings">
+                                            <h4 class="card-title text-uppercase">John Doe</h4>
+                                            <h6>Regular Member</h6>
+                                        </div>
+                                        <div class="infos">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">
+                                                    <span class="fas fa-envelope"></span>
+                                                    <span class="content">user@email.com</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+{% endblock %}

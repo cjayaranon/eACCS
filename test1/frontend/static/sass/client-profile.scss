@@ -1,0 +1,45 @@
+.slider {
+    width: 520px;
+    overflow: hidden;
+    display: inline-block;
+    
+    transform: skewX(-20deg);
+    transition: width 1.2s ease-in-out;
+    margin-left: -76px;
+    border-right: 10px solid ghostwhite;
+           
+    pointer-events: none;
+}
+
+.box {
+    width: 880px;
+    height: 330px;
+    border-radius: .5em;
+    overflow: hidden;
+}
+
+.sunset {
+    background-color: #28A745;
+//    background: url(http://storage.koinup.com/090525x154327/154327-6.jpg) no-repeat ;
+    transform: skewX(20deg);
+	margin-left: 76px; /* give margin to push content away from left slanted edge */
+	pointer-events: auto; 
+}
+
+.sunrise {
+	position: absolute; 	/* remove from flow so sunset is placed on top */
+	box-shadow: 0 0 10px rgba(0, 0, 0, .7);
+}
+
+//.slider:hover {
+//	width: 760px;
+//}
+//		
+//.sunrise:hover + .slider { 
+//	 width: 450px;
+//}
+
+.profile-img {
+    height: 500px;
+    width: 500px;
+}

@@ -16,12 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from test1 import views
+from frontOffice import views as fo
+from django.conf import settings
+from django.conf.urls import (handler404)
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.Login.as_view(), name="login"),
     path('main/', views.MainMenu.as_view(), name="home"),
-    path('main/front-office', views.FrontOffice.as_view(), name="front-office"),
-    path('main/front-office/new-client', views.NewClient.as_view(), name="new-client"),
+    path('main/front-office', fo.FrontOffice.as_view(), name="front-office"),
+    path('main/front-office/new-client', fo.NewClient.as_view(), name = "new-client"),
+    path('main/front-office/view-client', fo.ViewClient.as_view(), name = "view-client"),
+    
     path('404', views.Error404.as_view(), name="error"),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

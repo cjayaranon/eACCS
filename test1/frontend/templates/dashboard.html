@@ -18,8 +18,30 @@
 <title>AMPC|Dashboard</title>
 <div class="row">
     <div class="col-md-8">
-        <h2 class="h2">Welcome!</h2>
-        <p>{% lorem 1 p random %}</p>
+        <div class="welcome-text">
+            <h2 class="h2">Welcome!</h2>
+            <p>{% lorem 1 p random %}</p>
+        </div>
+        {% for items in announce %}
+        <hr>
+        <div class="card shadow">
+            <div class="card-body" id="announce-title">
+                <div class="navbar bg-dark">
+                    <h4 class="card-title text-white">{{items.title}}</h4>
+                </div>
+                <div class="card-text text-justify" id="announce-text">
+                    &nbsp;
+                    <p>{{items.input_text|ljust:"10"}}</p>
+                </div>
+                <div id="author">
+                    <span>Posted by:</span>
+                    <p>{{items.author}}</p>
+                    <span class="badge badge-success">{{items.date_post}}</span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <hr>
         <div>
             <a href="#" class="btn btn-success btn-block shadow">
                 <i class="fas fa-hourglass-start"></i>
@@ -30,6 +52,8 @@
                 End your Day
             </a>
         </div>
+        &nbsp;
+        &nbsp;
     </div>
     <div class="col-md-4">
         &nbsp;

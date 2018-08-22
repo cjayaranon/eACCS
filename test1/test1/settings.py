@@ -25,7 +25,7 @@ SECRET_KEY = '41@2)ns*riubwe6bbg5lq5mi(#=acj3m5-mb!p@hw&=itktzef'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'test1',
     'django_countries',
+    'announcements',
+    'frontOffice'
 ]
 
 MIDDLEWARE = [
@@ -125,3 +127,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, STATIC_URL.strip("/"))
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend', 'static')]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, MEDIA_URL.strip("/"))
+MEDIAFILES_DIRS = [os.path.join(BASE_DIR, 'media', 'clients')]
