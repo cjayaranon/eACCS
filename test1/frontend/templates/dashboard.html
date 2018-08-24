@@ -6,6 +6,10 @@
 <link href="{% static 'css/bootstrap/dashboard.css' %}" rel="stylesheet">
 <link href="{% static 'node_modules/fortawesome/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
 
+<!--CUSTOM CSS FOR THIS TEMPLATE-->
+<link href="{% static 'css/custom-styles/announcement.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'css/custom-styles/server-detail-styles.css' %}" rel="stylesheet" type="text/css">
+
 <!--BREADCRUMB-->
 {% block breadcrumb %}
 {{ block.super}}<li class="breadcrumb-item active">Dashboard</li>
@@ -26,8 +30,8 @@
         <hr>
         <div class="card shadow">
             <div class="card-body" id="announce-title">
-                <div class="navbar bg-dark">
-                    <h4 class="card-title text-white">{{items.title}}</h4>
+                <div class="navbar custom-header">
+                    <h4 class="card-title">{{items.title}}</h4>
                 </div>
                 <div class="card-text text-justify" id="announce-text">
                     &nbsp;
@@ -36,14 +40,14 @@
                 <div id="author">
                     <span>Posted by:</span>
                     <p>{{items.author}}</p>
-                    <span class="badge badge-success">{{items.date_post}}</span>
+                    <span class="badge custom-badge">{{items.date_post}}</span>
                 </div>
             </div>
         </div>
         {% endfor %}
         <hr>
         <div>
-            <a href="#" class="btn btn-success btn-block shadow">
+            <a href="#" class="btn custom-btn-blue btn-block shadow">
                 <i class="fas fa-hourglass-start"></i>
                 Start your Day
             </a>
@@ -58,14 +62,9 @@
     <div class="col-md-4">
         &nbsp;
         <p>
-<!--
-            <span class="fa-stack">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <span class="fas fa-spin fa-clock fa-stack-1x fa-lg fa-inverse"></span>
-            </span>
--->
             <span class="fas fa-clock fa-lg fa-fw"></span>
-            <label id="timeS" style="margin-bottom: 0px;"></label></p>
+            <label id="timeS" class="custom-clock"></label>
+        </p>
         <p><i class="fas fa-calendar-check fa-lg fa-fw"></i>{% now "F j Y" %}</p>
     </div>
 </div>

@@ -1,3 +1,9 @@
+$lasalle-green: #067220;
+$regis-black: #000000;
+$granite-gray: #666666;
+$ghost-white: #F8F8FF;
+$usaf-blue: #003686;
+
 .slider {
     width: 520px;
     overflow: hidden;
@@ -6,7 +12,7 @@
     transform: skewX(-20deg);
     transition: width 1.2s ease-in-out;
     margin-left: -76px;
-    border-right: 10px solid ghostwhite;
+    border-right: 10px solid $ghost-white;
            
     pointer-events: none;
 }
@@ -19,8 +25,8 @@
 }
 
 .sunset {
-    background-color: #28A745;
-//    background: url(http://storage.koinup.com/090525x154327/154327-6.jpg) no-repeat ;
+    background-color: $lasalle-green;
+//    background: 
     transform: skewX(20deg);
 	margin-left: 76px; /* give margin to push content away from left slanted edge */
 	pointer-events: auto; 
@@ -43,3 +49,8 @@
     height: 500px;
     width: 500px;
 }
+
+@import 'text-styles';
+@import 'card-sizes';
+@import 'table-styles';
+@import 'button-styles';
