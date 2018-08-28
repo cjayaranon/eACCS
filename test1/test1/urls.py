@@ -13,21 +13,23 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import announcements.views as an
+import frontOffice.views as fo
+import test1.views as te
+
 from django.contrib import admin
 from django.urls import path
-from test1 import views
-from frontOffice import views as fo
 from django.conf import settings
 from django.conf.urls import (handler404)
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.Login.as_view(), name="login"),
-    path('main/', views.MainMenu.as_view(), name="home"),
+    path('', te.Login.as_view(), name="login"),
+    path('main/', an.Dashboard.as_view(), name="home"),
     path('main/front-office', fo.FrontOffice.as_view(), name="front-office"),
     path('main/front-office/new-client', fo.NewClient.as_view(), name = "new-client"),
     path('main/front-office/view-client', fo.ViewClient.as_view(), name = "view-client"),
     
-    path('404', views.Error404.as_view(), name="error"),
+    path('404', te.Error404.as_view(), name="error"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

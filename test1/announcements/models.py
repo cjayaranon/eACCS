@@ -1,4 +1,5 @@
 from datetime import datetime
+from django.utils import timezone
 from django.db import models
 
 # Create your models here.
@@ -9,6 +10,7 @@ class Announcement(models.Model):
         blank = False
     )
     input_text = models.TextField(
+        verbose_name = 'Post Body',
 #        max_length = 99,
         blank = False
     )
@@ -19,14 +21,19 @@ class Announcement(models.Model):
 #    save date of the post
 #    cannot be overriden
     date_created = models.DateTimeField(
-        'Date of Post Creation',
+        verbose_name = 'Timestamp',
         auto_now_add = True
     )
-    date_post = models.DateTimeField(
-        'Date of Posting',
-        default = datetime.now(),
+    last_modified = models.DateTimeField(
+        verbose_name = 'Last Modified',
+        auto_now = True
+    )
+    date_posted = models.DateField(
+        verbose_name = 'Publication Schedule',
+        default = datetime.now,
         blank = False
     )
     post_status = models.BooleanField(
+        verbose_name = 'Post Status',
         default = False
     )

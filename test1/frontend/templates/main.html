@@ -15,7 +15,7 @@
 <!-- Custom styles for this template -->
         <link href="{% static 'css/bootstrap/dashboard.css' %}" rel="stylesheet">
         <link href="{% static 'node_modules/fortawesome/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
-        <link href="{% static 'css/ampc-style.css' %}" type="text/css">
+        <link href="{% static 'css/custom-styles/ampc-style.css' %}" type="text/css">
       
 <!--FONTAWESOME CDN-->
 <!--        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">-->
@@ -159,8 +159,7 @@
                 </nav>
                 {% endblock menu %}
 <!--END SIDEBAR-->
-        &nbsp;
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" >
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 custom-main">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 <!--BREADCRUMBS-->
                 <div class="breads">
@@ -168,13 +167,15 @@
                         <ol class="breadcrumb">
                             {% block breadcrumb %}
                             <li class="breadcrumb-item" aria-current="page">
-                                Main</li>
+                                Home
+                            </li>
                             {% endblock breadcrumb %}
                         </ol>
                     </nav>
                 </div>
                 
 <!--END BREADCRUMBS-->
+<!--RECENTLY USED-->
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
                         <i class="fas fa-clipboard-list fa-sm"></i>
@@ -186,10 +187,19 @@
                         {% endfor %}
                     </div>
                 </div>
+<!--END RECENTLY USED-->
             </div>
             {% block content %}
             {% endblock %}
+            
         </main>
+<!--NOTIFICATIONS-->
+        <div id="notifs">
+            {% block mod %}
+            {% include "warning-modal.html" %}
+            {% endblock mod %}
+        </div>
+<!--END NOTIFICATIONS-->
       </div>
     </div>
 

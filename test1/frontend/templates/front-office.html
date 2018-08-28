@@ -20,14 +20,8 @@
 <!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">-->
 
 <!--BREADCRUMBS-->
-{% block breadcrumb %}
-{{ block.super}}<li class="breadcrumb-item active">Front Office</li>
-{% endblock breadcrumb %}
-<!--END BREADCRUMBS-->
 
-{% block mod %}
-{% include "warning-modal.html" %}
-{% endblock mod %}
+<!--END BREADCRUMBS-->
 
 {% block title %}
 <title>AMPC|Front Office</title>
@@ -35,6 +29,9 @@
 
 {% endblock %}
 
+{% block breadcrumb %}
+{{ block.super}}<li class="breadcrumb-item active">Front Office</li>
+{% endblock breadcrumb %}
 
 {% block content %}
 

@@ -11,7 +11,8 @@ class AnnouncementsAdmin(admin.ModelAdmin):
         'input_text',
         'author',
         'post_status',
-        'date_post'
+        'last_modified',
+        'date_posted'
     ]
     
     

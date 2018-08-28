@@ -19,21 +19,10 @@ def visit_history(request, name):
     return saved_visit
 
 
+
 class Login(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'index.html', {})
-  
-
-    
-class MainMenu(View):
-    def get(self, request, *args, **kwargs):
-        name = 'main'
-        
-        announce = Announcement.objects.filter(post_status=True).order_by('-date_post')
-        
-        context = {'nbar':name, 'announce':announce}
-        return render(request, 'dashboard.html', context)
-#        return render(request, 'main.html', context)
 
 
 
