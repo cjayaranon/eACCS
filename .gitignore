@@ -15,5 +15,5 @@ settings_local.py
 /var/log/
 /Users/migrations
 /clients/migrations
-/test1/static
-/static
+/test1/static/
+/static/
