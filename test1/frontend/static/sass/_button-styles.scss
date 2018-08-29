@@ -3,3 +3,21 @@
     background-color: $usaf-blue;
     border-color: $usaf-blue;
 }
+
+.custom-btn-blue:hover{
+    color: $usaf-blue;
+    background-color: $ghost-white;
+    border-color: $usaf-blue;
+}
+
+.custom-btn-green {
+    color: $ghost-white;
+    background-color: $lasalle-green;
+    border-color: $lasalle-green;
+}
+
+.custom-btn-green:hover {
+    color: $lasalle-green;
+    background-color: $ghost-white;
+    border-color: $lasalle-green;
+}

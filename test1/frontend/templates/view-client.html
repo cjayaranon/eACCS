@@ -15,18 +15,18 @@
 
 <!--FONTAWESOME CDN-->
 <!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">-->
+{% endblock css %}
 
 <!--BREADCRUMBS-->
 {% block breadcrumb %}
 {{ block.super}}
-<li class="breadcrumb-item">Front Office</li>
+<li class="breadcrumb-item"><a class="text-body" href="{% url 'front-office' %}">Front Office</a></li>
 <li class="breadcrumb-item active">View Client</li>
 {% endblock breadcrumb %}
-<!--END BREADCRUMBS-->
-{% endblock css %}
 
+<!--CONTENT-->
 {% block content %}
-<title>Profile | Client Name</title>
+<title>Profile | View Client Details</title>
 <nav id="home" class="menu">
     <div class="set">
         <div id="profile-card">
@@ -63,7 +63,7 @@
                                                 Blk 6 Lot 12 Dagohoy St. DDF Village, Mandug, Davao City
                                             </p>
                                         </div>
-                                        <a href="#" class="btn custom-btn-blue">Go somewhere</a>
+                                        <a href="{% url 'edit-client' %}" class="btn custom-btn-blue">Edit Info</a>
                                     </div>
                                 </div>
                             </div>
@@ -130,12 +130,9 @@
                 </div>
             </div>
         </div>
-        &nbsp;
-        <div class="footer">
-            <footer>
-                <p class="text-center text-muted">Retrieved {% now "jS \o\f F Y P" %}</p>
-            </footer>
-        </div>
     </div>
 </nav>
 {% endblock %}
+{% block footer %}
+    {{ block.super }}<p class="text-center text-muted">Retrieved {% now "jS \o\f F Y P" %}</p>
+{% endblock footer %}

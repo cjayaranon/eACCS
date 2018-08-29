@@ -30,6 +30,8 @@ urlpatterns = [
     path('main/front-office', fo.FrontOffice.as_view(), name="front-office"),
     path('main/front-office/new-client', fo.NewClient.as_view(), name = "new-client"),
     path('main/front-office/view-client', fo.ViewClient.as_view(), name = "view-client"),
+    path('main/front-office/view-client/edit-client', fo.EditClient.as_view(), name = "edit-client"),
+    path('main/more/announcements-menu', an.AnnouncementMenu.as_view(), name = "announcement-menu"),
     
     path('404', te.Error404.as_view(), name="error"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -27,4 +27,10 @@ class ViewClient(View):
         img = Client.objects.all()
         return render(request, 'view-client.html', {'nbar':name, 'pic':img})
     
+    
+class EditClient(View):
+    def get(self, request, *args, **kwargs):
+        context = {}
+        return render(request, 'edit-client.html', context)
+    
 

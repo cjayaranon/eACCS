@@ -150,7 +150,8 @@
                                 </a>
                                 <div class="collapse" id="collapseExample">
                                     <div class="card card-body">
-                                    <p>{% lorem 1 w random %}</p>
+                                        <a href="#" class="btn custom-btn-green btn-block btn-sm">{% lorem 1 w random %}</a>
+                                        <a href="{% url 'announcement-menu' %}" class="btn custom-btn-green btn-block btn-sm">Announcements</a>
                                     </div>
                                 </div>
                             </li>
@@ -167,7 +168,7 @@
                         <ol class="breadcrumb">
                             {% block breadcrumb %}
                             <li class="breadcrumb-item" aria-current="page">
-                                Home
+                                <a class="text-body" href="{% url 'home' %}">Home</a>
                             </li>
                             {% endblock breadcrumb %}
                         </ol>
@@ -192,6 +193,19 @@
             {% block content %}
             {% endblock %}
             
+<!--FOOTER-->
+            <footer class="my-5 pt-5 text-muted text-center text-small">
+                {% block footer %}
+<!--                <p class="text-center text-muted"></p>-->
+                {% endblock footer %}
+                <p class="mb-1">&copy; 2018 AMPC</p>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#">Privacy</a></li>
+                    <li class="list-inline-item"><a href="#">Terms</a></li>
+                    <li class="list-inline-item"><a href="#">Support</a></li>
+                </ul>
+            </footer>
+<!--END FOOTER-->
         </main>
 <!--NOTIFICATIONS-->
         <div id="notifs">
@@ -201,6 +215,7 @@
         </div>
 <!--END NOTIFICATIONS-->
       </div>
+            
     </div>
 
     <!-- Bootstrap core JavaScript
