@@ -4,6 +4,7 @@ Django==2.1
 django-countries==5.3.1
 docopt==0.6.2
 idna==2.7
+pillow==5.2.0
 pip-autoremove==0.9.1
 pipdeptree==0.13.0
 pipreqs==0.4.9

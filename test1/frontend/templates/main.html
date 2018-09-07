@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
 {% load staticfiles %}
@@ -15,6 +15,7 @@
 <!-- Custom styles for this template -->
         <link href="{% static 'css/bootstrap/dashboard.css' %}" rel="stylesheet">
         <link href="{% static 'node_modules/fortawesome/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/custom-styles/ampc-style.css' %}" type="text/css">
       
 <!--FONTAWESOME CDN-->
 <!--        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">-->
@@ -149,66 +150,33 @@
                                 </a>
                                 <div class="collapse" id="collapseExample">
                                     <div class="card card-body">
-                                    <p>{% lorem 1 w random %}</p>
+                                        <a href="#" class="btn custom-btn-green btn-block btn-sm">{% lorem 1 w random %}</a>
+                                        <a href="{% url 'announcement-menu' %}" class="btn custom-btn-green btn-block btn-sm">Announcements</a>
                                     </div>
                                 </div>
                             </li>
                         </ul>
-                        
-<!--
-                        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                            <span>Saved reports</span>
-                            <a class="d-flex align-items-center text-muted" href="#">
-                                <span data-feather="plus-circle"></span>
-                            </a>
-                        </h6>
-                        
-                        <ul class="nav flex-column mb-2">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><span data-feather="file-text"></span>
-                                    Current month
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <span data-feather="file-text"></span>
-                                    Last quarter
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <span data-feather="file-text"></span>
-                                    Social engagement
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <span data-feather="file-text"></span>
-                                    Year-end sale
-                                </a>
-                            </li>
-                        </ul>
--->
                     </div>
                 </nav>
                 {% endblock menu %}
 <!--END SIDEBAR-->
-        &nbsp;
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" >
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 custom-main">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                
+<!--BREADCRUMBS-->
                 <div class="breads">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             {% block breadcrumb %}
                             <li class="breadcrumb-item" aria-current="page">
-                                Main</li>
+                                <a class="text-body" href="{% url 'home' %}">Home</a>
+                            </li>
                             {% endblock breadcrumb %}
                         </ol>
                     </nav>
                 </div>
                 
 <!--END BREADCRUMBS-->
+<!--RECENTLY USED-->
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
                         <i class="fas fa-clipboard-list fa-sm"></i>
@@ -220,11 +188,35 @@
                         {% endfor %}
                     </div>
                 </div>
+<!--END RECENTLY USED-->
             </div>
             {% block content %}
             {% endblock %}
+            
+<!--FOOTER-->
+            <footer class="my-5 pt-5 text-muted text-center text-small">
+                {% block footer %}
+<!--                <p class="text-center text-muted"></p>-->
+                {% endblock footer %}
+                <p class="mb-1">&copy; 2018 AMPC</p>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#">Privacy</a></li>
+                    <li class="list-inline-item"><a href="#">Terms</a></li>
+                    <li class="list-inline-item"><a href="#">Support</a></li>
+                </ul>
+            </footer>
+<!--END FOOTER-->
         </main>
+<!--NOTIFICATIONS-->
+        <div id="notifs">
+            {% block mod %}
+            {% include "warning-unavailable-modal.html" %}
+            {% include "warning-save-modal.html" %}
+            {% endblock mod %}
+        </div>
+<!--END NOTIFICATIONS-->
       </div>
+            
     </div>
 
     <!-- Bootstrap core JavaScript

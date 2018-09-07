@@ -1,0 +1,126 @@
+{% extends "main.html" %}
+{% load staticfiles %}
+
+{% block css %}
+<!--BOOTSTRAP CORE CSS-->
+<link href="{% static 'css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+
+<!--FONTAWESOME-->
+<link href="{% static 'node_modules/fortawesome/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+<!--CUSTOM STYLES FOR THIS TEMPLATE-->
+<link rel="stylesheet" href="{% static 'css/bootstrap/dashboard.css' %}" >
+<link href="{% static 'css/bootstrap/form-validation.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="{% static 'node_modules/fortawesome/fontawesome-free/css/all.min.css' %}" type="text/css">
+<link href="{% static 'css/custom-styles/ampc-style.css' %}" rel="stylesheet" type="text/css">
+{% endblock css %}
+
+<!--BREADCRUMBS-->
+{% block breadcrumb %}
+{{ block.super}}
+<li class="breadcrumb-item"><a class="text-body" href="{% url 'front-office' %}">Front Office</a></li>
+<li class="breadcrumb-item"><a class="text-body" href="{% url 'view-client' %}">View Client</a></li>
+<li class="breadcrumb-item active">Edit Client</li>
+{% endblock breadcrumb %}
+
+<!--CONTENT-->
+{% block content %}
+<title>AMPC | Edit Announcem Details</title>
+
+<div class="py-5 text-center">
+    <h2 class="h3">Edit Announcement Info</h2>
+    <p class="lead">You may now modify selected Client Information</p>
+</div>
+
+<table class="table table-hover">
+<!--
+    <thead>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+    </thead>
+-->
+    <tbody>
+        <tr>
+            <th scope="row">
+                First Name
+            </th>
+            <td>
+                {% lorem 1 w random %}
+            </td>
+            <td>
+                <input type="text" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                Middle Name
+            </th>
+            <td>
+                {% lorem 1 w random %}
+            </td>
+            <td>
+                <input type="text" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                Last Name
+            </th>
+            <td>
+                {% lorem 1 w random %}
+            </td>
+            <td>
+                <input type="text" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                Suffix
+            </th>
+            <td>
+                {% lorem 1 w random %}
+            </td>
+            <td>
+                <input type="text" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                Date of Birth
+            </th>
+            <td>
+                {% lorem 1 w random %}
+            </td>
+            <td>
+                <input type="text" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                Sex
+            </th>
+            <td>
+                {% lorem 1 w random %}
+            </td>
+            <td>
+                <input type="text" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                Civil Status
+            </th>
+            <td>
+                {% lorem 1 w random %}
+            </td>
+            <td>
+                <input type="text" class="form-control">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn custom-btn-blue btn-lg btn-block">Submit Changes</button>
+
+{% endblock %}
+

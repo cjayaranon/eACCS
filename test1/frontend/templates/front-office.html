@@ -1,4 +1,5 @@
 {% extends "main.html" %}
+
 {% load staticfiles %}
 
 {% block css %}
@@ -13,20 +14,27 @@
 <link href="{% static 'css/bootstrap/dashboard.css' %}" rel="stylesheet">
 <link href="{% static 'node_modules/fortawesome/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
 <link href="{% static 'css/ampc-style.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'css/custom-styles/server-detail-styles.css' %}" rel="stylesheet" type="text/css">
 
 <!--FONTAWESOME CDN-->
 <!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">-->
 
 <!--BREADCRUMBS-->
-{% block breadcrumb %}
-{{ block.super}}<li class="breadcrumb-item active">Front Office</li>
-{% endblock breadcrumb %}
+
 <!--END BREADCRUMBS-->
+
+{% block title %}
+<title>AMPC|Front Office</title>
+{% endblock title %}
 
 {% endblock %}
 
+{% block breadcrumb %}
+{{ block.super}}<li class="breadcrumb-item active">Front Office</li>
+{% endblock breadcrumb %}
+
 {% block content %}
-<title>AMPC|Front Office</title>
+
 <div class="row justify-content-center">
     <div class="col-md-8">
         <h2 class="h3">Client Services</h2>
@@ -41,14 +49,14 @@
             <div class="col-md-4">
                 <a href="{% url 'error' %}" class="btn btn-outline-secondary btn-block shadow">
                     <i class="fab fa-rebel fa-lg fa-fw"></i>
-                    {% lorem 1 w random %}
+                    404 page
                 </a>
             </div>
             <span style="display:block; height: 50px;"></span>
             <div class="col-md-4">
-                <a href="#" class="btn btn-outline-secondary btn-block shadow">
+                <a href="{% url 'view-client' %}" class="btn btn-outline-secondary btn-block shadow">
                     <i class="fab fa-galactic-republic fa-lg fa-fw"></i>
-                    {% lorem 1 w random %}
+                    View Client
                 </a>
             </div>
         </div>
@@ -58,7 +66,7 @@
         <h2 class="h3">Inquiry</h2>
         <div class="row">
             <div class="col-md-3">
-                <a href="#" class="btn btn-outline-secondary btn-block shadow">
+                <a href="#" class="btn btn-outline-secondary btn-block shadow" data-toggle="modal" data-target="#exampleModal">
                     <i class="fab fa-galactic-senate fa-lg fa-fw"></i>
                     {% lorem 1 w random %}
                 </a>
@@ -107,9 +115,12 @@
             <span style="display:block; height: 50px;"></span>
         </div>
     </div>
-    <div class="col-md-4" id="timeS">
+    <div class="col-md-4">
         &nbsp;
-        <p><i class="fas fa-clock fa-lg fa-fw"></i>{% now "h:i:s" %}<span class="badge badge-light">{% now "A" %}</span></p>
+        <p>
+            <span class="fas fa-clock fa-lg fa-fw"></span>
+            <label id="timeS" class="custom-clock"></label>
+        </p>
         <p><i class="fas fa-calendar-check fa-lg fa-fw"></i>{% now "F j Y" %}</p>
     </div>
 </div>
@@ -136,5 +147,5 @@
                 });
             }
         </script>
-<!--<script href="{% static 'node_modules/fortawesome/fontawesome-free/js/brands.js' %}"></script>-->
+<script src="{% static 'js/server-time.js' %}"></script>
 {% endblock %}

@@ -15,5 +15,9 @@ settings_local.py
 /var/log/
 /Users/migrations
 /clients/migrations
-/test1/static
-/static
+/frontOffice/migrations
+/announcements/migrations
+/notifs/migrations
+/websettings/migrations
+/test1/static/
+/static/

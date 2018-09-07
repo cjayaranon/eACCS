@@ -1,0 +1,55 @@
+$lasalle-green: #067220;
+$regis-black: #000000;
+$granite-gray: #666666;
+$ghost-white: #F8F8FF;
+$usaf-blue: #003686;
+
+.slider {
+    width: 520px;
+    overflow: hidden;
+    display: inline-block;
+    
+    transform: skewX(-20deg);
+    transition: width 1.2s ease-in-out;
+    margin-left: -76px;
+    border-right: 10px solid $ghost-white;
+           
+    pointer-events: none;
+}
+
+.box {
+    width: 880px;
+    height: 330px;
+    border-radius: .5em;
+    overflow: hidden;
+}
+
+.sunset {
+    background-color: $lasalle-green;
+    transform: skewX(20deg);
+	margin-left: 76px; /* give margin to push content away from left slanted edge */
+	pointer-events: auto; 
+}
+
+.sunrise {
+	position: absolute; 	/* remove from flow so sunset is placed on top */
+	box-shadow: 0 0 10px rgba(0, 0, 0, .7);
+}
+
+//.slider:hover {
+//	width: 760px;
+//}
+//		
+//.sunrise:hover + .slider { 
+//	 width: 450px;
+//}
+//
+.profile-img {
+    height: 500px;
+    width: 500px;
+}
+
+@import 'text-styles';
+@import 'card-sizes';
+@import 'table-styles';
+@import 'button-styles';

@@ -1,0 +1,138 @@
+{% extends "main.html" %}
+{% load staticfiles %}
+
+{% block css %}
+<!--Bootstrap core CSS-->
+<link href="{% static 'css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+
+<!--BOOTSTRAP CDN-->
+<!--    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
+
+<!--Custome styles for this template-->
+<link rel="stylesheet" href="{% static 'css/bootstrap/dashboard.css' %}" >
+<link rel="stylesheet" href="{% static 'node_modules/fortawesome/fontawesome-free/css/all.min.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/custom-styles/client-profile.css' %}" type="text/css">
+
+<!--FONTAWESOME CDN-->
+<!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">-->
+{% endblock css %}
+
+<!--BREADCRUMBS-->
+{% block breadcrumb %}
+{{ block.super}}
+<li class="breadcrumb-item"><a class="text-body" href="{% url 'front-office' %}">Front Office</a></li>
+<li class="breadcrumb-item active">View Client</li>
+{% endblock breadcrumb %}
+
+<!--CONTENT-->
+{% block content %}
+<title>Profile | View Client Details</title>
+<nav id="home" class="menu">
+    <div class="set">
+        <div id="profile-card">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <div class="box sunrise shadow-lg">
+                            {% for n in pic %}
+                            <img src="{{n.clientPhoto.url}}" alt="profile-image" class="profile-img" align="right"/>
+                            {% endfor %}
+                        </div>
+                        <div class="slider">
+                            <div class="box sunset">
+                                &nbsp;
+                                <div class="card bg-transparent border-0 profile-card">
+                                    <div class="card-body align-middle text-white">
+                                        <div class="info-headings">
+                                            <h3 class="text-uppercase bg-transparent client-name">John Doe</h3>
+                                            <h6 class="card-subtitle mb-2 text-white-50">Regular Member</h6>
+                                            &nbsp;
+                                        </div>
+                                        <div class="infos card-text">
+                                            <p>
+                                                <i class="fas fa-phone fa-lg fa-fw"></i>
+                                                09xx-xxx-xxxx
+                                            </p>
+                                            <p>
+                                                <i class="fas fa-envelope fa-lg fa-fw"></i>
+                                                user@email.com
+                                            </p>
+                                            <p>
+                                                <i class="fas fa-map-marker-alt fa-lg fa-fw"></i>
+                                                Blk 6 Lot 12 Dagohoy St. DDF Village, Mandug, Davao City
+                                            </p>
+                                        </div>
+                                        <a href="{% url 'edit-client' %}" class="btn custom-btn-blue">Edit Info</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+        <div id="profile-details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <div class="card profile-details shadow-lg">
+                            <div class="card-body">
+                                <h3 class="card-title">Profile Details</h3>
+                                <table class="table">
+                                    <tr>
+                                        <td class="text-right">Account Name</td>
+                                        <td>{% lorem 1 w random%}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">Date of Birth</td>
+                                        <td>{% lorem 1 w random%}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">Sex</td>
+                                        <td>{% lorem 1 w random %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">Civil Status</td>
+                                        <td>{% lorem 1 w random %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">Weight</td>
+                                        <td>{% lorem 1 w random %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">Height</td>
+                                        <td>{% lorem 1 w random %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">Monthly Income</td>
+                                        <td>{% lorem 1 w random %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">Profession</td>
+                                        <td>{% lorem 1 w random %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">Mailing Address 1</td>
+                                        <td>{% lorem 1 p random %}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">Mailing Address 2</td>
+                                        <td>{% lorem 1 w random %}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+{% block footer %}
+    {{ block.super }}<p class="text-center text-muted">Retrieved {% now "jS \o\f F Y P" %}</p>
+{% endblock footer %}

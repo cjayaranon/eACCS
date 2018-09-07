@@ -1,0 +1,33 @@
+.btn-outline-secondary {
+  white-space: normal;
+}
+
+.mod-row {
+  height: 30px;
+}
+
+.custom-btn-blue {
+  color: #F8F8FF;
+  background-color: #003686;
+  border-color: #003686;
+}
+
+.custom-btn-blue:hover {
+  color: #003686;
+  background-color: #F8F8FF;
+  border-color: #003686;
+}
+
+.custom-btn-green {
+  color: #F8F8FF;
+  background-color: #067220;
+  border-color: #067220;
+}
+
+.custom-btn-green:hover {
+  color: #067220;
+  background-color: #F8F8FF;
+  border-color: #067220;
+}
+
+/*# sourceMappingURL=ampc-style.css.map */
