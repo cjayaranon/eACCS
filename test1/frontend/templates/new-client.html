@@ -44,7 +44,7 @@
                     <h6 class="my-0">Client Photo</h6>
                     &nbsp;
                     <div class="fileinput fileinput-new" data-provides="fileinput">
-                        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: auto; height: auto">
+                        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 200px">
                         </div>
                         <div>
                             <span class="btn btn-outline-success btn-sm btn-file">
@@ -64,7 +64,7 @@
                     <h6 class="my-0">Signature Image</h6>
                     &nbsp;
                     <div class="fileinput fileinput-new" data-provides="fileinput">
-                        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: auto; height: auto">
+                        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 200px">
                         </div>
                         <div>
                             <span class="btn btn-outline-success btn-sm btn-file">
@@ -387,57 +387,6 @@
 
         <hr class="mb-4">
 <!--END MAILING ADDRESS 2-->
-<!--
-        <h4 class="mb-3">Payment</h4>
-
-        <div class="d-block my-3">
-          <div class="custom-control custom-radio">
-            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-            <label class="custom-control-label" for="credit">Credit card</label>
-          </div>
-          <div class="custom-control custom-radio">
-            <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-            <label class="custom-control-label" for="debit">Debit card</label>
-          </div>
-          <div class="custom-control custom-radio">
-            <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-            <label class="custom-control-label" for="paypal">PayPal</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="cc-name">Name on card</label>
-            <input type="text" class="form-control" id="cc-name" placeholder="" required>
-            <small class="text-muted">Full name as displayed on card</small>
-            <div class="invalid-feedback">
-              Name on card is required
-            </div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="cc-number">Credit card number</label>
-            <input type="text" class="form-control" id="cc-number" placeholder="" required>
-            <div class="invalid-feedback">
-              Credit card number is required
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3 mb-3">
-            <label for="cc-expiration">Expiration</label>
-            <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
-            <div class="invalid-feedback">
-              Expiration date required
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="cc-cvv">CVV</label>
-            <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-            <div class="invalid-feedback">
-              Security code required
-            </div>
-          </div>
-        </div>
--->
         <div class="row">
             <div class="col-md-6 mb-3">
                 <label for="profession">Profession</label>
@@ -446,6 +395,9 @@
                         <span class="input-group-text"><i class="fas fa-user-secret fa-sm"></i></span>
                     </div>
                     <input type="text" class="form-control cap-field" id="profession" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid profession.
+                    </div>
                 </div>
             </div>
             <div class="col-md-6 mb-3">
@@ -462,32 +414,12 @@
             </div>
         </div>
         <hr class="mb-4">
-        <button class="btn custom-btn-blue btn-lg btn-block" type="submit" onclick="checkImg()">Continue to submission</button>
+        <button class="btn btn-primary custom-btn-blue btn-lg btn-block" id="submitbtn" type="submit" onclick="checkImg()" >Continue to submission</button>
         </form>
     </div>
 </div>
 
     <script src="{% static 'js/validity-check.js' %}">
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
-//      (function() {
-//        'use strict';
-//
-//        window.addEventListener('load', function() {
-//          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-//          var forms = document.getElementsByClassName('needs-validation');
-//
-//          // Loop over them and prevent submission
-//          var validation = Array.prototype.filter.call(forms, function(form) {
-//            form.addEventListener('submit', function(event) {
-//              if (form.checkValidity() === false) {
-//                event.preventDefault();
-//                event.stopPropagation();
-//              }
-//              form.classList.add('was-validated');
-//            }, false);
-//          });
-//        }, false);
-//      })();
     </script>
     <script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
     <script src="{% static 'node_modules/jquery/dist/jquery.min.js' %}"></script>
@@ -496,9 +428,20 @@
     <script>
         function checkImg(){
             document.getElementById("client-photo").required = true;
-            document.getElementById("client-photo-error").innerHTML = "Please provide a valid client photo";
             document.getElementById("client-sig").required = true;
-            document.getElementById("client-sig-error").innerHTML = "Please provide a valid signature photo"
+            var client_img = $('#client-photo').val();
+            var sig_img = $('#client-sig').val();
+            if(client_img == ''){
+                document.getElementById("client-photo-error").innerHTML = "Please provide a valid client photo";
+            }
+            else {
+                document.getElementById("client-photo-error").innerHTML = "";
+            }
+            if(sig_img == ''){
+                document.getElementById("client-sig-error").innerHTML = "Please provide a valid signature photo"
+            }
+            return false;
+            
         }
     </script>
     <script src="{% static 'node_modules/simple-mask-money/lib/simple-mask-money.js' %}"></script>
@@ -528,5 +471,12 @@
         $('#height').mask('0\'00\"');
         $('#weight').mask('00.00');
         $('#suffix').mask('AAA');
+    </script>
+
+<!--Get form items-->
+    <script>
+        $('#submitbtn').click(function(){
+            $('#fname').text($('#firstName').val());
+        })
     </script>
 {% endblock %}

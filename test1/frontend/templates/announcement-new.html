@@ -18,9 +18,9 @@
 <!--BREADCRUMBS-->
 {% block breadcrumb %}
 {{ block.super}}
-<li class="breadcrumb-item"><a class="text-body" href="{% url 'front-office' %}">Front Office</a></li>
-<li class="breadcrumb-item"><a class="text-body" href="{% url 'view-client' %}">View Client</a></li>
-<li class="breadcrumb-item active">Edit Client</li>
+<li class="breadcrumb-item">More</li>
+<li class="breadcrumb-item"><a class="text-body" href="{% url 'announcement-menu' %}">Announcements</a></li>
+<li class="breadcrumb-item active">New Announcement</li>
 {% endblock breadcrumb %}
 
 <!--CONTENT-->
@@ -28,99 +28,51 @@
 <title>AMPC | New Announcement</title>
 
 <div class="py-5 text-center">
-    <h2 class="h3">Edit Client Info</h2>
-    <p class="lead">You may now modify selected Client Information</p>
+    <h2 class="h3">New Announcement</h2>
+    <p class="lead">You may now add a new announcement using the form below.</p>
 </div>
 
 <table class="table table-hover">
-<!--
-    <thead>
-        <th scope="col"></th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-    </thead>
--->
     <tbody>
         <tr>
             <th scope="row">
-                First Name
+                Title
             </th>
-            <td>
-                {% lorem 1 w random %}
-            </td>
             <td>
                 <input type="text" class="form-control">
             </td>
         </tr>
         <tr>
             <th scope="row">
-                Middle Name
+                Content
             </th>
             <td>
-                {% lorem 1 w random %}
+                <textarea class="form-control"></textarea>
             </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                Author
+            </th>
             <td>
                 <input type="text" class="form-control">
             </td>
         </tr>
         <tr>
             <th scope="row">
-                Last Name
+                Publication Schedule
             </th>
-            <td>
-                {% lorem 1 w random %}
-            </td>
-            <td>
-                <input type="text" class="form-control">
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">
-                Suffix
-            </th>
-            <td>
-                {% lorem 1 w random %}
-            </td>
-            <td>
-                <input type="text" class="form-control">
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">
-                Date of Birth
-            </th>
-            <td>
-                {% lorem 1 w random %}
-            </td>
-            <td>
-                <input type="text" class="form-control">
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">
-                Sex
-            </th>
-            <td>
-                {% lorem 1 w random %}
-            </td>
-            <td>
-                <input type="text" class="form-control">
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">
-                Civil Status
-            </th>
-            <td>
-                {% lorem 1 w random %}
-            </td>
             <td>
                 <input type="text" class="form-control">
             </td>
         </tr>
     </tbody>
 </table>
-<button class="btn custom-btn-blue btn-lg btn-block">Submit Changes</button>
+<div class="text-center">
+    <button class="btn custom-btn-blue btn-lg">
+    <i class="fas fa-paper-plane fa-fw"></i>
+</button>
+</div>
 
 {% endblock %}
 

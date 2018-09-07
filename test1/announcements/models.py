@@ -28,7 +28,7 @@ class Announcement(models.Model):
         verbose_name = 'Last Modified',
         auto_now = True
     )
-    date_posted = models.DateField(
+    date_pub = models.DateField(
         verbose_name = 'Publication Schedule',
         default = datetime.now,
         blank = False

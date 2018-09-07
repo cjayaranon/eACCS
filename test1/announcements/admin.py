@@ -12,7 +12,7 @@ class AnnouncementsAdmin(admin.ModelAdmin):
         'author',
         'post_status',
         'last_modified',
-        'date_posted'
+        'date_pub'
     ]
     
     

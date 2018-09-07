@@ -10,7 +10,7 @@ from django.views.generic import View
 
 class Dashboard(View):
     def get(self, request, *args, **kwargs):
-        announcements = Announcement.objects.filter(post_status=True).order_by('-date_posted')
+        announcements = Announcement.objects.filter(post_status=True).order_by('-date_pub')
         
         context = {'announce':announcements, 'date_today':datetime.now().date}
         
@@ -27,3 +27,4 @@ class NewAnnouncement(View):
     def get(self, request, *args, **kwargs):
         context = {}
         return render(request, 'announcement-new.html', context)
+    

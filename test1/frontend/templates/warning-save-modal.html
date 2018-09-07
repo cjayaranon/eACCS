@@ -1,0 +1,46 @@
+{% load staticfiles %}
+
+{% block css %}
+<link href="{% static 'css/bootstrap/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="{% static 'node_modules/fortawesome/fontawesome-free/css/all.min.css' %}" type="text/css">
+<link href="{% static 'css/custom-styles/ampc-style.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'css/custom-styles/notifs-styles.css' %}" rel="stylesheet" type="text/css">
+{% endblock css %}
+
+{% block content %}
+
+<div class="modal fade" id="saveWarningModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+<!--MODAL HEADER-->
+            <div class="modal-header bg-danger">
+                <h5 class="modal-title text-light" id="exampleModalLabel">
+                    WARNING
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+<!--MODAL BODY-->
+            <div class="modal-body">
+                You are trying to save some data to the database. Are you sure of the details?
+                <table class="table table-hover table-borderless">
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="custom-align-right">{% lorem 1 w random %}</th>
+                            <td id="fname"></td>
+                        </tr>
+                        <tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+<!--MODAL FOOTER-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn custom-btn-blue">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
