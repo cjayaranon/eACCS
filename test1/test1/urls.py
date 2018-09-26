@@ -26,7 +26,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', te.Login.as_view(), name="login"),
-    path('main/', an.Dashboard.as_view(), name="home"),
+#    path('main/', an.Dashboard.as_view(), name="home"),
+    
+    path('main/', an.AnnouncementListView.as_view(), name="home"),
+    
     path('main/front-office', fo.FrontOffice.as_view(), name="front-office"),
     path('main/front-office/new-client', fo.NewClient.as_view(), name = "new-client"),
     path('main/front-office/view-client', fo.ViewClient.as_view(), name = "view-client"),

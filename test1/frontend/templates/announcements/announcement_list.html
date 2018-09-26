@@ -27,8 +27,7 @@
             <p>{% lorem 1 p random %}</p>
         </div>
 <!--ANNOUNCEMENTS-->
-        {% for items in announce %}
-        {% if items.date_pub < date_today %}
+        {% for items in object_list %}
         <hr>
         <div class="card shadow">
             <div class="card-body" id="announce-title">
@@ -51,9 +50,6 @@
                 </div>
             </div>
         </div>
-        {% else %}
-        
-        {% endif %}
         {% endfor %}
 <!--END ANNOUNCEMENTS-->
         <hr>
@@ -228,4 +224,5 @@
     </script>
 -->
     <script src="{% static 'js/server-time.js' %}"></script>
+    <script src="{% static 'js/announcement.js' %}"></script>
 {% endblock %}

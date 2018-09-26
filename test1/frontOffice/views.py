@@ -1,4 +1,5 @@
 from frontOffice.models import *
+from frontOffice.forms import NewClientForm
 
 from django.conf import settings
 from django.contrib import messages
@@ -16,7 +17,8 @@ class FrontOffice(View):
 class NewClient(View):
     def get(self, request, *args, **kwargs):
         name = 'front-office'
-        return render(request, 'new-client.html', {'nbar':name})
+        form = NewClientForm()
+        return render(request, 'new-client.html', {'nbar':name, 'form':form})
     
 #    def post(self, request, *args, *kwargs):
 #        return render(request, '')
